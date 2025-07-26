@@ -1,6 +1,6 @@
 # VirtualLab - Electrical Circuit Reasoning API
 
-Đây là một API đơn giản dùng mô phỏng và phân tích các hiện tượng vật lý cơ bản trong mạch điện, sử dụng mô hình ngôn ngữ lớn từ OpenAI.
+Đây là một API phân tích cấu trúc mạch điện, đánh giá và giải thích chuyên sâu về bản chất hiện tượng vật lý phổ thông.
 
 ---
 
