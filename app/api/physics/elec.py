@@ -17,10 +17,7 @@ async def explain_electricity_concept(request: ElecRequest):
     :return: JSON response with the explanation.
     """
     new_state = State(graph=str(request.graph), question=request.question, data=[])
-    try:
-        response_state = explain_physics(new_state)
-        return JSONResponse(content={
-            "response": response_state.response
-        })
-    except Exception as e:
-        raise HTTPException(status_code=500, detail=str(e))
+    response_state = explain_physics(new_state)
+    return JSONResponse(content={
+        "response": response_state.response
+    })

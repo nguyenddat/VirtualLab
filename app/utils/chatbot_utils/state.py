@@ -12,3 +12,4 @@ class State(BaseModel):
     data: List[str]
 
     response: Optional[str] = None
+    recommendations: Optional[List[str]] = None

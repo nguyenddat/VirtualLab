@@ -3,11 +3,12 @@ from typing import Dict, Any, Tuple
 from langchain.prompts import ChatPromptTemplate
 
 from app.core.llm import llm
-from app.utils.chatbot_utils.prompts import intent_classify, simplify, break_down
+from app.utils.chatbot_utils.prompts import intent_classify, simplify, break_down, summary
 from app.utils.chatbot_utils.parsers import (
     intent_classify as intent_classify_parser,
     simplify as simplify_parser,
-    break_down as break_down_parser
+    break_down as break_down_parser,
+    summary as summary_parser
 )
 
 def get_chat_completion(task: str, params: Dict[str, Any] = {}):
@@ -52,6 +53,13 @@ def get_prompt_template(task: str):
     elif task == "break_down":
         prompt = break_down.prompt
         parser = break_down_parser.break_down_parser
+
+    elif task == "summary":
+        prompt = summary.prompt
+        parser = summary_parser.summary_parser
+
+    else:
+        raise ValueError(f"Unknown task: {task}")
 
     prompt_template = ChatPromptTemplate.from_messages(
         [
