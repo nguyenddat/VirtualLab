@@ -23,16 +23,21 @@ OPENAI_API_KEY=sk-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 
 > Bạn cần có một API key hợp lệ từ [OpenAI](https://platform.openai.com/account/api-keys).
 
-### 3. Cài đặt môi trường (Python >= 3.8)
+### 3. Cài đặt môi trường (Python 3.12.6)
 
-Khuyên dùng virtualenv:
-
+virtualenv:
 ```bash
 python -m venv venv
 source venv/bin/activate  # hoặc venv\Scripts\activate trên Windows
 pip install -r requirements.txt
 ```
 
+conda:
+```bash
+conda create -n env python=3.12.6
+conda activate env
+pip install -r requirements.txt
+```
 ### 4. Chạy server
 
 ```bash
@@ -43,33 +48,52 @@ Server sẽ chạy tại `http://127.0.0.1:8000`
 
 ---
 
+## ⚡️ Các thiết bị vật lý hỗ trợ
+Hệ thống hiện tại hỗ trợ các loại thiết bị sau trong mô hình mạch điện:
+- **battery**: Pin, nguồn điện một chiều.  
+- **bulb**: Bóng đèn điện.  
+- **voltmeter**: Vôn kế đo hiệu điện thế.  
+- **ammeter**: Ampe kế đo dòng điện.  
+- **capacitor**: Tụ điện.
+
+Mỗi thiết bị đều có các thuộc tính riêng, ví dụ:
+- **battery**: `voltage`, `left_socket`, `right_socket`
+- **bulb**: `on`, `min_voltage`, `max_voltage`, `left_socket_connected`, `right_socket_connected`
+- **voltmeter**: `current`, `left_socket_connected`, `right_socket_connected`
+- **ammeter**: `current`, `left_socket_connected`, `right_socket_connected`
+- **capacitor**: `charged`, `capacitance`, `left_socket_connected`, `right_socket_connected`
+- **wire**: `from`, `to` (kết nối giữa các thiết bị)
+
+Bạn có thể tham khảo chi tiết các thuộc tính trong các file model:
+- [app/models/basic_physics/battery.py](app/models/basic_physics/battery.py)
+- [app/models/basic_physics/bulb.py](app/models/basic_physics/bulb.py)
+- [app/models/basic_physics/voltmeter.py](app/models/basic_physics/voltmeter.py)
+- [app/models/basic_physics/ammeter.py](app/models/basic_physics/ammeter.py)
+- [app/models/basic_physics/capacitor.py](app/models/basic_physics/capacitor.py)
+- [app/models/basic_physics/wire.py](app/models/basic_physics/wire.py)
+---
+
 ## 🔌 Gọi API phân tích mạch điện
-
 ### Endpoint:
-
 ```
-POST /api/physics/explain
+POST /api/physics/elec/explain
 ```
 
 ### Headers:
-
 ```json
 Content-Type: application/json
 ```
 
 ### Request body ví dụ:
-
 ```json
 {
   "graph": { "devices": [...], "connections": [...] },
   "question": "Phân tích chi tiết lý do tại sao tất cả các bóng đèn đều không sáng, ampe kế không đo được dòng, vôn kế không có số chỉ và tụ điện không tích điện."
 }
 ```
-
 > Phần `graph` là mô hình mạch điện, gồm các thiết bị và dây nối như pin, bóng đèn, tụ điện, ampe kế, vôn kế...
 
 ### Response mẫu:
-
 ```json
 {
   "response": "Tất cả các bóng đèn không sáng vì mạch bị hở tại ..."
@@ -79,7 +103,6 @@ Content-Type: application/json
 ---
 
 ## 🧪 Dữ liệu test mẫu
-
 ```json
 {
   "graph": {
