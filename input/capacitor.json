@@ -1,0 +1,11 @@
+{
+    "name": "capacitor1",
+    "type": "capacitor",
+    "position": {"x": 3, "y": 1, "z": 0},
+    "properties": {
+        "charged": false,
+        "capacitance": 100,
+        "left_socket_connected": true,
+        "right_socket_connected": false
+    }
+}

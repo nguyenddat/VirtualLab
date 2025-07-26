@@ -1,0 +1,99 @@
+{
+  "devices": [
+    {
+      "name": "battery1",
+      "type": "battery",
+      "position": {"x": 0, "y": 0, "z": 0},
+      "properties": {
+        "voltage": 12,
+        "left_socket": "negative",
+        "right_socket": "positive"
+      }
+    },
+    {
+      "name": "ammeter1",
+      "type": "ammeter",
+      "position": {"x": 2, "y": 1, "z": 0},
+      "properties": {
+        "left_socket_connected": true,
+        "right_socket_connected": false,
+        "current": 0.5
+      }
+    },
+    {
+      "name": "bulb1",
+      "type": "bulb",
+      "position": {"x": 1, "y": 1, "z": 0},
+      "properties": {
+        "on": true, 
+        "min_voltage": 100,
+        "max_voltage": 240,
+        "left_socket_connected": false,
+        "right_socket_connected": true
+      }
+    },
+    {
+      "name": "capacitor1",
+      "type": "capacitor",
+      "position": {"x": 3, "y": 1, "z": 0},
+      "properties": {
+        "charged": false,
+        "capacitance": 100,
+        "left_socket_connected": true,
+        "right_socket_connected": false
+      }
+    },
+    {
+      "name": "voltmeter1",
+      "type": "voltmeter",
+      "position": {"x": 1, "y": 2, "z": 0},
+      "properties": {
+        "left_socket_connected": true,
+        "right_socket_connected": false,
+        "current": 0
+      }
+    }
+  ],
+  "connections": [
+    {
+      "name": "wire1",
+      "type": "wire",
+      "properties": {
+        "from": "bulb1.right_socket",
+        "to": "ammeter1.left_socket"
+      }
+    },
+    {
+      "name": "wire2",
+      "type": "wire",
+      "properties": {
+        "from": "ammeter1.right_socket",
+        "to": "capacitor1.left_socket"
+      }
+    },
+    {
+      "name": "wire3",
+      "type": "wire",
+      "properties": {
+        "from": "capacitor1.right_socket",
+        "to": "voltmeter1.left_socket"
+      }
+    },
+    {
+      "name": "wire4",
+      "type": "wire",
+      "properties": {
+        "from": "voltmeter1.right_socket",
+        "to": "battery1.left_socket"
+      }
+    },
+    {
+      "name": "wire5",
+      "type": "wire",
+      "properties": {
+        "from": "battery1.right_socket",
+        "to": "bulb1.left_socket"
+      }
+    }
+  ]
+}

@@ -1,0 +1,8 @@
+{
+    "name": "wire1",
+    "type": "wire",
+    "properties": {
+        "from": "bulb1.right_socket",
+        "to": "bulb2.left_socket"
+    }
+}

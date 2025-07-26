@@ -1,0 +1,10 @@
+{
+    "name": "battery1",
+    "type": "battery",
+    "position": {"x": 0, "y": 0, "z": 0},
+    "properties": {
+        "voltage": 12,
+        "left_socket": "negative",
+        "right_socket": "positive"
+    }
+}

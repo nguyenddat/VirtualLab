@@ -1,0 +1,10 @@
+{
+    "name": "volmeter1",
+    "type": "voltmeter",
+    "position": {"x": 1, "y": 2, "z": 0},
+    "properties": {
+        "left_socket_connected": true,
+        "right_socket_connected": false,
+        "current": 0
+    }
+}

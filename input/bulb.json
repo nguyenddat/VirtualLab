@@ -1,0 +1,12 @@
+{
+    "name": "bulb1",
+    "type": "bulb",
+    "position": {"x": 1, "y":  1, "z": 0},
+    "properties": {
+        "on": true, 
+        "min_voltage": 100,
+        "max_voltage": 240,
+        "left_socket_connected": false,
+        "right_socket_connected": true
+    }
+}
