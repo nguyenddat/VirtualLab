@@ -5,6 +5,7 @@ from fastapi import FastAPI
 from starlette.middleware.cors import CORSMiddleware
 
 from app.api.physics.elec import router as elec_router
+from app.api.physics.create_tool import router as create_tool_router
 
 def get_application() -> FastAPI:
     app = FastAPI()
@@ -18,6 +19,7 @@ def get_application() -> FastAPI:
 
     """Register API routers."""
     app.include_router(elec_router, prefix="/api/physics", tags=["physics"])
+    app.include_router(create_tool_router, prefix="/api/physics", tags=["physics"])
     return app
 
 app = get_application()

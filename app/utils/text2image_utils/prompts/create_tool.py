@@ -1,0 +1,1 @@
+prompt = """1 {question} với nền trắng hoàn toàn, không có họa tiết phụ"""
