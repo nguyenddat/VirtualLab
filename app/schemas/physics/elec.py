@@ -1,6 +1,6 @@
 from pydantic import BaseModel, Field
 
-from app.models.basic_physics.graph import ElecGraph
+from models.basic_physics.graph import ElecGraph
 
 class ElecRequest(BaseModel):
     """Request model for electrical circuit operations."""

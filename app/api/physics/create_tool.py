@@ -1,9 +1,9 @@
 from fastapi import APIRouter, HTTPException
 from fastapi.responses import JSONResponse
 
-from app.schemas.physics.elec import ElecRequest
+from schemas.physics.elec import ElecRequest
 
-from app.services.create_tool import create_tool
+from services.create_tool import create_tool
 
 router = APIRouter()
 

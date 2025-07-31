@@ -1,6 +1,6 @@
 from pydantic import BaseModel, Field
 
-from app.models.basic_physics.base_device import BasePhysicsDevice
+from models.basic_physics.base_device import BasePhysicsDevice
 
 class BatteryProperties(BaseModel):
     """Properties of a battery."""

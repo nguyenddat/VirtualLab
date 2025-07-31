@@ -4,8 +4,8 @@ load_dotenv()
 from fastapi import FastAPI
 from starlette.middleware.cors import CORSMiddleware
 
-from app.api.physics.elec import router as elec_router
-from app.api.physics.create_tool import router as create_tool_router
+from api.physics.elec import router as elec_router
+from api.physics.create_tool import router as create_tool_router
 
 def get_application() -> FastAPI:
     app = FastAPI()

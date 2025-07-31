@@ -1,10 +1,10 @@
 from fastapi import APIRouter, HTTPException
 from fastapi.responses import JSONResponse
 
-from app.schemas.physics.elec import ElecRequest
+from schemas.physics.elec import ElecRequest
 
-from app.utils.chatbot_utils.state import State
-from app.services.physic_explain import explain_physics
+from utils.chatbot_utils.state import State
+from services.physic_explain import explain_physics
 
 router = APIRouter()
 
