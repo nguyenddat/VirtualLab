@@ -18,3 +18,4 @@ services:
 networks:
   fast_api:
     driver: bridge
+
