@@ -12,26 +12,21 @@ from utils.chatbot_utils.parsers import (
     extract_tool as extract_tool_parser
 )
 
+def get_chat_completion_stream(task: str, params: Dict[str, Any] = {}):
+    prompt, parser = get_prompt_template(task)
+    chain = prompt | llm | parser
+    for chunk in chain.stream(params):
+        yield chunk
+
 def get_chat_completion(task: str, params: Dict[str, Any] = {}):
-    """
-    Get chat completion from the LLM for a given task with optional parameters.
-    
-    Args:
-        task (str): The task description for which to get the chat completion.
-        params (Dict[str, Any], optional): Additional parameters for the LLM request.
-        
-    Returns:
-        Dict[str, Any]: The response from the LLM containing the chat completion.
-    """
     prompt, parser = get_prompt_template(task)
     chain = prompt | llm | parser
 
     response = chain.invoke(params)
     if not isinstance(response, dict):
         response = dict(response)
-    
     return response
-
+        
 
 def get_prompt_template(task: str):
     """

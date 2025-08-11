@@ -1,0 +1,64 @@
+[
+    {
+        "id": 1,
+        "name": "Vật lý",
+        "contents": [
+            {
+                "id": 1,
+                "name": "Chuyển động cơ học",
+                "description": "Chuyển động cơ học là sự thay đổi vị trí của một vật so với vật khác theo thời gian."
+            },
+            {
+                "id": 2,
+                "name": "Động lực học",
+                "description": "Động lực học là một ngành vật lý nghiên cứu về chuyển động của các vật thể dưới tác dụng của các lực."
+            },
+            {
+                "id": 3,
+                "name": "Điện",
+                "description": "Điện học nghiên cứu các hiện tượng liên quan đến điện tích, dòng điện, hiệu điện thế và điện trở."
+            },
+            {
+                "id": 4,
+                "name": "Quang học",
+                "description": "Quang học là ngành nghiên cứu về ánh sáng và các hiện tượng liên quan như phản xạ, khúc xạ, và tán sắc."
+            },
+            {
+                "id": 5,
+                "name": "Nhiệt học",
+                "description": "Nhiệt học nghiên cứu các hiện tượng liên quan đến nhiệt độ, nhiệt lượng và các quá trình truyền nhiệt."
+            }
+        ]
+    },
+    {
+        "id": 2,
+        "name": "Sinh học",
+        "contents": [
+            {
+                "id": 1,
+                "name": "Tế bào",
+                "description": "Tế bào là đơn vị cơ bản cấu tạo nên mọi sinh vật sống và thực hiện các chức năng sống cơ bản."
+            },
+            {
+                "id": 2,
+                "name": "Di truyền học",
+                "description": "Di truyền học nghiên cứu về gen, ADN và quá trình truyền đạt thông tin di truyền qua các thế hệ."
+            },
+            {
+                "id": 3,
+                "name": "Tiến hóa",
+                "description": "Tiến hóa là quá trình thay đổi di truyền trong quần thể sinh vật qua các thế hệ."
+            },
+            {
+                "id": 4,
+                "name": "Hệ tiêu hóa",
+                "description": "Hệ tiêu hóa giúp cơ thể hấp thụ chất dinh dưỡng từ thức ăn thông qua các cơ quan như miệng, dạ dày và ruột."
+            },
+            {
+                "id": 5,
+                "name": "Quang hợp",
+                "description": "Quang hợp là quá trình thực vật sử dụng ánh sáng mặt trời để tổng hợp chất hữu cơ từ CO2 và nước."
+            }
+        ]
+    }
+]

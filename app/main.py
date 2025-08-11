@@ -4,11 +4,16 @@ load_dotenv()
 from fastapi import FastAPI
 from starlette.middleware.cors import CORSMiddleware
 
-from api.physics.elec import router as elec_router
-from api.physics.create_tool import router as create_tool_router
+from core.config import config
+# from fastapi_sqlalchemy import DBSessionMiddleware
+# from database import init_db  # Import để khởi tạo database
+    # app.add_middleware(DBSessionMiddleware, db_url=config.database_url)
+
+from api import electric_explain_router
 
 def get_application() -> FastAPI:
     app = FastAPI()
+
     app.add_middleware(
         CORSMiddleware,
         allow_origins=["*"],
@@ -18,10 +23,8 @@ def get_application() -> FastAPI:
     )
 
     """Register API routers."""
-    app.include_router(elec_router, prefix="/api/physics", tags=["physics"])
-    app.include_router(create_tool_router, prefix="/api/physics", tags=["physics"])
+    app.include_router(electric_explain_router, prefix="/api/physics", tags=["physics"])
+    # app.include_router(experiment_router, prefix="/api/experiment", tags=["experiment"])
     return app
 
 app = get_application()
-# if __name__ == "__main__":
-#     uvicorn.run(app, host="localhost", port=8000, log_level="info", reload=True)

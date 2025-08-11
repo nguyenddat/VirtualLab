@@ -1,4 +1,23 @@
 services:
+  # db:
+  #   container_name: lab_db
+  #   image: postgres
+  #   volumes:
+  #     - ./database/data:/var/lib/postgresql/data
+  #   env_file:
+  #     - ./database/.env
+  #   ports:
+  #     - "8001:5432"
+  #   restart: unless-stopped
+  #   healthcheck:
+  #     test: ["CMD", "pg_isready", "-U", "postgres"]
+  #     interval: 5s
+  #     timeout: 5s
+  #     retries: 2
+  #   networks:
+  #     - fast_api
+
+
   backend:
     container_name: lab_backend
     build:
@@ -12,6 +31,9 @@ services:
       - "8000:8000"
     restart: always
     command: "uvicorn main:app --host 0.0.0.0 --port 8000 --reload"
+    # depends_on:
+    #   db:
+    #     condition: service_healthy
     networks:
       - fast_api
   
