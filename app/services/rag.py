@@ -15,7 +15,7 @@ from app.services.physic_explain import rewrite_graph
 
 class Rag:
     def __init__(self, file_name: str):
-        self.save_local = os.path.join(os.getcwd(), "artifacts/rag")
+        self.save_local = os.path.join(os.getcwd(),"app","artifacts","rag")
         os.makedirs(self.save_local, exist_ok=True)
 
         self.file_name = file_name
@@ -39,7 +39,7 @@ class Rag:
             print("Creating new FAISS index from PDF...")
             
             documents = []
-            file_path = os.path.join(os.getcwd(), "static", self.file_name)
+            file_path = os.path.join(os.getcwd(),"app","static", self.file_name)
             pages = convert_from_path(file_path, dpi=300)
             
             for page_num, page in tqdm(enumerate(pages, start=1), total=len(pages), desc="Processing pages"):
