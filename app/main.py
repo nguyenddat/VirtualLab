@@ -7,7 +7,7 @@ from starlette.middleware.cors import CORSMiddleware
 
 from app.core.config import config
 
-from api import electric_explain_router, student_explain_router
+from app.api import electric_explain_router, student_explain_router
 
 def get_application() -> FastAPI:
     app = FastAPI()
