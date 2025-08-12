@@ -6,7 +6,7 @@
 # import json
 
 # from app.database.init_db import get_db
-# from schemas import SaveExperimentRequest
+# from app.schemas import SaveExperimentRequest
 # from app.schemas.experiment.responses import (
 #     ExperimentResponse, 
 #     ExperimentsListResponse, 

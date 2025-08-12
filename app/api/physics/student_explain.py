@@ -4,7 +4,7 @@ import json
 from fastapi import APIRouter
 from fastapi.responses import StreamingResponse
 
-from schemas import ElectricExplainRequest
+from app.schemas import ElectricExplainRequest
 from app.utils.chatbot_utils.state import State
 from app.services.physic_explain import explain_physics
 from app.services.rag import Rag
