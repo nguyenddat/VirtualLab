@@ -5,9 +5,9 @@
 # from typing import List, Optional
 # import json
 
-# from database.init_db import get_db
+# from app.database.init_db import get_db
 # from schemas import SaveExperimentRequest
-# from schemas.experiment.responses import (
+# from app.schemas.experiment.responses import (
 #     ExperimentResponse, 
 #     ExperimentsListResponse, 
 #     SaveExperimentResponse, 

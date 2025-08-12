@@ -8,10 +8,10 @@ from pdf2image import convert_from_path
 from langchain_community.vectorstores import FAISS
 from langchain.text_splitter import RecursiveCharacterTextSplitter
 
-from core.llm import llm, embeddings
-from utils.chatbot_utils.state import State
-from utils.chatbot_utils.chain import get_chat_completion_stream
-from services.physic_explain import rewrite_graph
+from app.core.llm import llm, embeddings
+from app.utils.chatbot_utils.state import State
+from app.utils.chatbot_utils.chain import get_chat_completion_stream
+from app.services.physic_explain import rewrite_graph
 
 class Rag:
     def __init__(self, file_name: str):

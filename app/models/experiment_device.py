@@ -2,7 +2,7 @@ from sqlalchemy import *
 from sqlalchemy.dialects.postgresql import JSONB
 from sqlalchemy.orm import relationship
 
-from models.base_class import BareBaseModel
+from app.models.base_class import BareBaseModel
 
 class Experiment_Device(BareBaseModel):
     experiment_id = Column(Integer, ForeignKey("experiment.id"), nullable=False)

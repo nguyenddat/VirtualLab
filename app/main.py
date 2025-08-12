@@ -5,7 +5,7 @@ from fastapi import FastAPI
 from fastapi.staticfiles import StaticFiles
 from starlette.middleware.cors import CORSMiddleware
 
-from core.config import config
+from app.core.config import config
 
 from api import electric_explain_router, student_explain_router
 
