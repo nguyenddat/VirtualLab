@@ -2,18 +2,16 @@ from dotenv import load_dotenv
 load_dotenv()
 
 from fastapi import FastAPI
+from fastapi.staticfiles import StaticFiles
 from starlette.middleware.cors import CORSMiddleware
 
 from core.config import config
-# from fastapi_sqlalchemy import DBSessionMiddleware
-# from database import init_db  # Import để khởi tạo database
-    # app.add_middleware(DBSessionMiddleware, db_url=config.database_url)
 
-from api import electric_explain_router
+from api import electric_explain_router, student_explain_router
 
 def get_application() -> FastAPI:
     app = FastAPI()
-
+    app.mount("/static", StaticFiles(directory="static"), name="static")
     app.add_middleware(
         CORSMiddleware,
         allow_origins=["*"],
@@ -24,7 +22,7 @@ def get_application() -> FastAPI:
 
     """Register API routers."""
     app.include_router(electric_explain_router, prefix="/api/physics", tags=["physics"])
-    # app.include_router(experiment_router, prefix="/api/experiment", tags=["experiment"])
+    app.include_router(student_explain_router, prefix="/api/physics", tags=["physics"])
     return app
 
 app = get_application()

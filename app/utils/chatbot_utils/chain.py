@@ -3,13 +3,14 @@ from typing import Dict, Any, Tuple
 from langchain.prompts import ChatPromptTemplate
 
 from core.llm import llm
-from utils.chatbot_utils.prompts import intent_classify, simplify, break_down, summary, extract_tool
+from utils.chatbot_utils.prompts import intent_classify, simplify, break_down, summary, extract_tool, rag
 from utils.chatbot_utils.parsers import (
     intent_classify as intent_classify_parser,
     simplify as simplify_parser,
     break_down as break_down_parser,
     summary as summary_parser,
-    extract_tool as extract_tool_parser
+    extract_tool as extract_tool_parser,
+    rag as rag_parser
 )
 
 def get_chat_completion_stream(task: str, params: Dict[str, Any] = {}):
@@ -57,6 +58,10 @@ def get_prompt_template(task: str):
     elif task == "extract_tool":
         prompt = extract_tool.prompt
         parser = extract_tool_parser.extract_tool_parser
+
+    elif task == "rag":
+        prompt = rag.prompt
+        parser = rag_parser.rag_parser
 
     else:
         raise ValueError(f"Unknown task: {task}")
