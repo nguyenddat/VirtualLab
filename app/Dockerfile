@@ -28,7 +28,8 @@ RUN pip install --no-cache-dir \
     tqdm \
     -r requirements.txt
 
-# Mở cổng cho app (nếu chạy web)
+# Mở cổng cho app (Render sẽ thay bằng $PORT)
 EXPOSE 8000
 
-CMD ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "8000"]
+# Sử dụng biến môi trường PORT từ Render, mặc định 8000 nếu chạy local
+CMD ["sh", "-c", "uvicorn main:app --host 0.0.0.0 --port ${PORT:-8000}"]
