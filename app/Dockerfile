@@ -22,12 +22,7 @@ WORKDIR /app
 COPY . /app/
 
 # Cài đặt thư viện Python
-RUN pip install --no-cache-dir \
-    pytesseract \
-    pdf2image \
-    tqdm \
-    psycopg2-binary \
-    -r requirements.txt
+RUN pip install --no-cache-dir -r requirements.txt
 
 # Mở cổng cho app (Render sẽ thay bằng $PORT)
 EXPOSE 8000
