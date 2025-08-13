@@ -1,7 +1,7 @@
 from sqlalchemy import *
 from sqlalchemy.orm import relationship
 
-from models.base_class import BareBaseModel
+from app.models.base_class import BareBaseModel
 
 class BookSet(BareBaseModel):
     name = Column(String, nullable=False)

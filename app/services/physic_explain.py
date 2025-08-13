@@ -1,8 +1,8 @@
 from copy import deepcopy
 
-from utils.chatbot_utils.state import State
-from utils.chatbot_utils.chain import get_chat_completion, get_chat_completion_stream
-from core.llm import llm
+from app.utils.chatbot_utils.state import State
+from app.utils.chatbot_utils.chain import get_chat_completion, get_chat_completion_stream
+from app.core.llm import llm
 
 def explain_physics(state: State):
     state = rewrite_graph(state)

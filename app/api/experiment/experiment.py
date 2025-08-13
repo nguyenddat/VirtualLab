@@ -2,12 +2,12 @@ from fastapi import APIRouter, Depends, HTTPException
 from sqlalchemy.orm import Session
 from sqlalchemy import or_
 
-from models.device import Device
-from models.vertex import Vertex
-from models.connection import Connection
-from models.experiment import Experiment
-from models.experiment_device import Experiment_Device
-from database.init_db import get_db
+from app.models.device import Device
+from app.models.vertex import Vertex
+from app.models.connection import Connection
+from app.models.experiment import Experiment
+from app.models.experiment_device import Experiment_Device
+from app.database.init_db import get_db
 
 router = APIRouter()
 
