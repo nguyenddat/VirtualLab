@@ -1,5 +1,6 @@
 from .base_class import BareBaseModel
 
+from .book import Book
 from .bookset import BookSet
 from .chapter import Chapter
 from .device import Device

@@ -7,7 +7,7 @@ from fastapi.staticfiles import StaticFiles
 router = APIRouter()
 
 # Mount static files
-static_dir = os.path.join(os.getcwd(),"app","static")
+static_dir = os.path.join(os.getcwd(),"static")
 if not os.path.exists(static_dir):
     os.makedirs(static_dir, exist_ok=True)
 

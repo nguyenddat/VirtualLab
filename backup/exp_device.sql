@@ -1,0 +1,13 @@
+INSERT INTO experiment_device (id, experiment_id, device_id, device_name, properties) VALUES
+ (1, 1, 1, 'Battery-19', '{"current": 0, "currentSense": "UNSPECIFIED", "voltage": 9, "isFlammable": true, "isMetallic": false, "batteryType": "normal", "internalResistance": 0.0001}'::jsonb),
+ (2, 1, 2, 'Switch-21', '{"current": 0, "currentSense": "UNSPECIFIED", "voltage": -9, "isFlammable": false, "isMetallic": false, "resistance": 1000000000, "isClosed": false}'::jsonb),
+ (3, 1, 3, 'Wire-22', '{"current": 0, "currentSense": "UNSPECIFIED", "voltage": 0, "isFlammable": false, "isMetallic": true, "resistance": 1.090102356547227e-08, "length": 0.05450511782736135, "resistivity": 1e-10}'::jsonb),
+ (4, 1, 3, 'Wire-23', '{"current": 0, "currentSense": "UNSPECIFIED", "voltage": 0, "isFlammable": false, "isMetallic": true, "resistance": 1.2266172215795772e-08, "length": 0.06133086107897886, "resistivity": 1e-10}'::jsonb),
+ (5, 1, 3, 'Wire-24', '{"current": 0, "currentSense": "UNSPECIFIED", "voltage": 0, "isFlammable": false, "isMetallic": true, "resistance": 1.3402965020744467e-08, "length": 0.06701482510372234, "resistivity": 1e-10}'::jsonb),
+ (6, 1, 3, 'Wire-25', '{"current": 0, "currentSense": "UNSPECIFIED", "voltage": 0, "isFlammable": false, "isMetallic": true, "resistance": 2.6889200342697352e-08, "length": 0.13444600171348675, "resistivity": 1e-10}'::jsonb),
+ (7, 1, 3, 'Wire-26', '{"current": 0, "currentSense": "UNSPECIFIED", "voltage": 0, "isFlammable": false, "isMetallic": true, "resistance": 1.1341667401111123e-08, "length": 0.056708337005555616, "resistivity": 1e-10}'::jsonb),
+ (8, 1, 4, 'Resistor-28', '{"current": 0, "currentSense": "UNSPECIFIED", "voltage": 0, "isFlammable": true, "isMetallic": false, "resistance": 10, "powerDissipated": 0}'::jsonb),
+ (9, 1, 3, 'Wire-29', '{"current": 0, "currentSense": "UNSPECIFIED", "voltage": 0, "isFlammable": false, "isMetallic": true, "resistance": 2.2370262148995897e-08, "length": 0.11185131074497948, "resistivity": 1e-10}'::jsonb),
+ (10, 1, 5, 'LightBulb-30', '{"current": 0, "currentSense": "UNSPECIFIED", "voltage": 0, "isFlammable": false, "isMetallic": false, "resistance": 10, "isReal": false, "isExtreme": false, "brightness": 0, "isLit": false}'::jsonb),
+ (11, 1, 3, 'Wire-31', '{"current": 0, "currentSense": "UNSPECIFIED", "voltage": 0, "isFlammable": false, "isMetallic": true, "resistance": 2.436964180029773e-08, "length": 0.12184820900148864, "resistivity": 1e-10}'::jsonb),
+ (12, 1, 3, 'Wire-32', '{"current": 0, "currentSense": "UNSPECIFIED", "voltage": 0, "isFlammable": false, "isMetallic": true, "resistance": 1.1308209543944255e-08, "length": 0.056541047719721266, "resistivity": 1e-10}'::jsonb);

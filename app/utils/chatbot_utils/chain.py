@@ -2,9 +2,9 @@ from typing import Dict, Any, Tuple
 
 from langchain.prompts import ChatPromptTemplate
 
-from app.core.llm import llm
-from app.utils.chatbot_utils.prompts import intent_classify, simplify, break_down, summary, extract_tool, rag
-from app.utils.chatbot_utils.parsers import (
+from core.llm import llm
+from utils.chatbot_utils.prompts import intent_classify, simplify, break_down, summary, extract_tool, rag
+from utils.chatbot_utils.parsers import (
     intent_classify as intent_classify_parser,
     simplify as simplify_parser,
     break_down as break_down_parser,

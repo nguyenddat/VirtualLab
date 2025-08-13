@@ -8,14 +8,14 @@ from pdf2image import convert_from_path
 from langchain_community.vectorstores import FAISS
 from langchain.text_splitter import RecursiveCharacterTextSplitter
 
-from app.core.llm import llm, embeddings
-from app.utils.chatbot_utils.state import State
-from app.utils.chatbot_utils.chain import get_chat_completion_stream
-from app.services.physic_explain import rewrite_graph
+from core.llm import llm, embeddings
+from utils.chatbot_utils.state import State
+from utils.chatbot_utils.chain import get_chat_completion_stream
+from services.physic_explain import rewrite_graph
 
 class Rag:
     def __init__(self, file_name: str):
-        self.save_local = os.path.join(os.getcwd(),"app","artifacts","rag")
+        self.save_local = os.path.join(os.getcwd(),"artifacts","rag")
         os.makedirs(self.save_local, exist_ok=True)
 
         self.file_name = file_name
@@ -39,7 +39,7 @@ class Rag:
             print("Creating new FAISS index from PDF...")
             
             documents = []
-            file_path = os.path.join(os.getcwd(),"app","static", self.file_name)
+            file_path = os.path.join(os.getcwd(),"static", self.file_name)
             pages = convert_from_path(file_path, dpi=300)
             
             for page_num, page in tqdm(enumerate(pages, start=1), total=len(pages), desc="Processing pages"):

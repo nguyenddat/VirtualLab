@@ -1,7 +1,7 @@
 from sqlalchemy import *
 from sqlalchemy.orm import relationship
 
-from app.models.base_class import BareBaseModel
+from models.base_class import BareBaseModel
 
 class Device(BareBaseModel):
     type = Column(String, nullable=False)

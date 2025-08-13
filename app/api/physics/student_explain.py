@@ -4,10 +4,10 @@ import json
 from fastapi import APIRouter
 from fastapi.responses import StreamingResponse
 
-from app.schemas import ElectricExplainRequest
-from app.utils.chatbot_utils.state import State
-from app.services.physic_explain import explain_physics
-from app.services.rag import Rag
+from schemas import ElectricExplainRequest
+from utils.chatbot_utils.state import State
+from services.physic_explain import explain_physics
+from services.rag import Rag
 
 
 router = APIRouter()
@@ -58,6 +58,7 @@ def generate_stream(generation):
 
 @router.post("/student_explain")
 async def student_explain(request: ElectricExplainRequest):
+    print(request.graph)
     state = State(
         question=request.question,
         graph=str(request.graph),

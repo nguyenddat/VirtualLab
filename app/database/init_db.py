@@ -3,8 +3,8 @@ from typing import *
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 
-from app.models.base_class import Base
-from app.core.config import config
+from models.base_class import Base
+from core.config import config
 
 engine = create_engine(config.database_url, pool_pre_ping=True)
 SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
