@@ -26,6 +26,7 @@ RUN pip install --no-cache-dir \
     pytesseract \
     pdf2image \
     tqdm \
+    psycopg2-binary \
     -r requirements.txt
 
 # Mở cổng cho app (Render sẽ thay bằng $PORT)
