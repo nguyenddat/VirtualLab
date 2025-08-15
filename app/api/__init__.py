@@ -5,5 +5,15 @@ from .experiment.bookset import router as bookset_router
 from .experiment.book import router as book_router
 from .experiment.chapter import router as chapter_router
 from .experiment.experiment import router as experiment_router
+from .auth.auth import router as auth_router
 
-__all__ = [electric_explain_router, student_explain_router, subject_router, bookset_router, book_router, chapter_router, experiment_router]
+__all__ = [
+    electric_explain_router, 
+    student_explain_router, 
+    subject_router, 
+    bookset_router, 
+    book_router, 
+    chapter_router, 
+    experiment_router,
+    auth_router
+]

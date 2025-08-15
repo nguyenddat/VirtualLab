@@ -9,3 +9,4 @@ from .experiment import Experiment
 from .subject import Subject
 from .vertex import Vertex
 from .connection import Connection
+from .user import User

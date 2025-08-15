@@ -7,7 +7,16 @@ from starlette.middleware.cors import CORSMiddleware
 
 from app.database.init_db import get_db
 
-from app.api import electric_explain_router, student_explain_router, subject_router, bookset_router, book_router, chapter_router, experiment_router
+from app.api import (
+    electric_explain_router, 
+    student_explain_router, 
+    subject_router, 
+    bookset_router, 
+    book_router, 
+    chapter_router, 
+    experiment_router,
+    auth_router
+)
 
 def get_application() -> FastAPI:
     app = FastAPI()
@@ -28,6 +37,8 @@ def get_application() -> FastAPI:
     app.include_router(chapter_router, prefix="/api/chapter", tags=["chapter"])
     app.include_router(experiment_router, prefix="/api/experiment", tags=["experiment"])
     app.include_router(book_router, prefix="/api/book", tags=["book"])
+    app.include_router(auth_router, prefix="/api/auth", tags=["auth"])
+    
     return app
 
 app = get_application()
